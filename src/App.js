@@ -6,7 +6,9 @@ import { faPlus, faTrash, faSave } from '@fortawesome/free-solid-svg-icons';
 import gql from 'graphql-tag';
 import { Query, Mutation } from 'react-apollo';
 import { ApolloConsumer } from 'react-apollo';
+import showdown from 'showdown';
 library.add(faPlus, faTrash, faSave);
+const converter = new showdown.Converter();
 
 const GET_DOCUMENTS = gql`
   {
@@ -240,9 +242,14 @@ class App extends Component {
                               <div className="w-100 float-left">Preview</div>
                             </div>
                             <div className="panel-body">
-                              <div className="w-100">
-                                {this.state.document.content}
-                              </div>
+                              <div
+                                className="w-100"
+                                dangerouslySetInnerHTML={{
+                                  __html: converter.makeHtml(
+                                    this.state.document.content
+                                  )
+                                }}
+                              />
                             </div>
                           </div>
                         )}
