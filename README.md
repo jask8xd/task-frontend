@@ -11,3 +11,9 @@ You need run backend project [https://github.com/jask8xd/task-backend](https://g
 ### `npm install`
 
 ### `npm start`
+
+Use
+
+In this project you can create, edit and remove documents with a Markdown Editor and you have a preview to see how the document looks.
+
+Watch this video [http://recordit.co/8diICGWD0d]http://recordit.co/8diICGWD0d

@@ -24,7 +24,7 @@ const ADD_DOCUMENT = gql`
   }
 `;
 
-const Documents = ({ data, client, handleSetDocument }) => (
+const Documents = ({ data, client, handleSetDocument, cleanDocumentSelected }) => (
   <div className="panel">
     <div className="panel-heading">
       <div className="float-left mt-1">MarkDownEditor</div>
@@ -88,6 +88,7 @@ const Documents = ({ data, client, handleSetDocument }) => (
                     client.writeData({
                       data: { documents }
                     });
+                    cleanDocumentSelected();
                   }}
                 >
                   {(removeDocument, { loading, error }) => (

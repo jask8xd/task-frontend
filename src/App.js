@@ -28,6 +28,10 @@ class App extends Component {
     this.setState({ document });
   }
 
+  cleanDocumentSelected = () => {
+    this.setState({ document: [] });
+  }
+
   handleChange = event => {
     const content = event.target.value;
     const document = {
@@ -53,6 +57,7 @@ class App extends Component {
                         data={data}
                         client={client}
                         handleSetDocument={this.handleSetDocument}
+                        cleanDocumentSelected={this.cleanDocumentSelected}
                       />
                     </div>
                     <div className="col-5">
