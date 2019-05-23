@@ -97,7 +97,7 @@ class App extends Component {
                                       variables: {
                                         title: `Document ${data.documents
                                           .length + 1}`,
-                                        content: 'nuevo'
+                                        content: ' '
                                       }
                                     });
                                   }}
