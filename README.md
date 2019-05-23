@@ -16,4 +16,4 @@ Use
 
 In this project you can create, edit and remove documents with a Markdown Editor and you have a preview to see how the document looks.
 
-Watch this video [http://recordit.co/8diICGWD0d]http://recordit.co/8diICGWD0d
+Watch this video [http://recordit.co/8diICGWD0d](http://recordit.co/8diICGWD0d)
