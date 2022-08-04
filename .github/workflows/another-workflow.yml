@@ -3,11 +3,6 @@ on:
   pull_request:
     branches:
       - release/**
-# A workflow run only in when you made pull to a release branch
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs: 
-      using: 'node14'
-      main: ''.github/workflows/check-version/index.js'
+runs: 
+  using: 'node14'
+  main: ''.github/workflows/check-version/index.js'
