@@ -1,5 +1,4 @@
 name: 'Check Version'
-author: 'Jair Almaraz Saldaña'
 on:
   pull_request:
     branches:
