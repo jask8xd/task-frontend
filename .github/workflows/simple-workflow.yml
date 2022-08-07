@@ -3,6 +3,7 @@ on:
   pull_request:
     branches:
       - release/**
-runs:
-  using: 'node16'
-  main: 'index.js'
+jobs:
+  runs:
+    using: 'node16'
+    main: 'index.js'
