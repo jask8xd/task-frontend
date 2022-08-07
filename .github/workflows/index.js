@@ -11,7 +11,7 @@ try {
     return;
   }
 
-  const token = core.getInput('token');
+  const token = core.getInput('GITHUB_TOKEN');
   console.log(token);
   const headers = {};
   if (token) {

@@ -1,10 +1,11 @@
-name: Check Version
+name: 'Check Version'
+author: 'Jair Almaraz Saldaña'
+inputs:
+  GITHUB_TOKEN:
+    description: 'Github Token'
+    required: true
 runs:
   using: 'node16'
   main: 'index.js'
-on:
-  pull_request:
-    branches:
-      - release/**
 
       
