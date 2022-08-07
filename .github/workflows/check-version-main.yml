@@ -1,10 +1,13 @@
 name: 'Check Version'
 author: 'Jair Almaraz Saldaña'
+on:
+  pull_request:
+    branches:
+      - release/**
 jobs:
   check-version:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: .github/workflows/check-version
+      - uses: .github/workflows/check-version
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
