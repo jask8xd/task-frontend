@@ -4,6 +4,8 @@ on:
     branches:
       - release/**
 jobs:
-  runs:
-    using: 'node16'
-    main: 'index.js'
+  check_version_job:
+    steps:
+      runs:
+        using: 'node16'
+        main: 'index.js'
