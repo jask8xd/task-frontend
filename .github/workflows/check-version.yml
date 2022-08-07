@@ -1,4 +1,4 @@
-name: 'Check Version'
+name: 'Check version'
 description: 'Check that version on package.json was changed'
 inputs:
   token:
