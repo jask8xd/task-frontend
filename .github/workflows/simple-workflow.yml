@@ -4,6 +4,10 @@ inputs:
   GITHUB_TOKEN:
     description: 'Github Token'
     required: true
+on:
+  pull_request:
+    branches:
+      - release/**
 runs:
   using: 'node16'
   main: 'index.js'
