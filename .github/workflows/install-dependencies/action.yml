@@ -1,0 +1,8 @@
+name: 'Node Dependencies'
+description: 'Install Node and Dependencies'
+runs:
+  using: 'composite'
+  steps:
+    - name: Install Dependencies
+      run: yarn install
+      shell: bash
