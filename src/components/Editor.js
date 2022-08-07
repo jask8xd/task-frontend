@@ -19,7 +19,7 @@ const UPDATE_DOCUMENT = gql`
 const Editor = ({ data, state, client, handleSetDocument, handleChange }) => (
   <div className="panel">
     <div className="panel-heading">
-      <div className="float-left mt-1"><p className={"font-italic"}>{`Editor : ${state.document.title}`}</p></div>
+      <div className="float-left mt-1"><p className={"font-italic"}>{`Editor modificado: ${state.document.title}`}</p></div>
       <div className="float-right">
         <Mutation
           mutation={UPDATE_DOCUMENT}
