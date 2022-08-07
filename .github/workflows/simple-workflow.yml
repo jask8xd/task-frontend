@@ -1,11 +1,10 @@
 name: Check Version
+runs:
+  using: 'node16'
+  main: 'index.js'
 on:
   pull_request:
     branches:
       - release/**
-jobs:
-  check_version_job:
-    steps:
-      runs:
-        using: 'node16'
-        main: 'index.js'
+
+      
