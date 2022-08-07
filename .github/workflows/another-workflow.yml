@@ -7,5 +7,5 @@ jobs:
   check-version:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "${{github}} test"
+      - run: echo "Hola, JAir esta modificando este pack"
     #main: '.github/workflows/check-version/index.js'
