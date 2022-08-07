@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Install Dependencies
           run: yarn install
-          shell: bash
+            shell: bash
       - uses: ./.github/workflows/check-version
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
