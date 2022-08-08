@@ -15,11 +15,13 @@ try {
     .then(res => res.version)
     .then(version => {
       const localVersion = require(`${ process.env.GITHUB_WORKSPACE }/package.json`).version;
+      const localVersionArr = localVersion.split('.'); 
       const versionArr = version.split('.');
-      const requiredVersion = `${versionArr[0]}.${versionArr[1]}.${Number(versionArr[2])+1}`;
-      if (requiredVersion === localVersion) {
-        core.info(`Version is set correctly}`);
-      } else  { core.setFailed(`Current version '${ localVersion }' should be the version '${ requiredVersion }'`); }
+      if (Number(localVersionArr[2]) > Number(versionArr[2])) {
+        core.info(`Version is set correctly`);
+      } else  { 
+        core.setFailed(`Current version '${ localVersion }' needs to be greater than '${ version }'`); 
+      }
     })
     .catch(core.setFailed);
 } catch (error) {
