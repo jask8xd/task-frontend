@@ -12,6 +12,8 @@ jobs:
       - uses: ./.github/workflows/check-version
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Update version commit
-        if: ${{ failure() }}
-          run: echo "Fallo este pack"
+  update-version:
+    if: ${{ failure() }}
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Aqui necesita actualizar este pack"
