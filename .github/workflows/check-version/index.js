@@ -21,7 +21,8 @@ try {
       core.info(`Version que estoy enviando: ${localVersion} tipo: ${typeof localVersion }`);
       core.info(`Version en el server: ${version} tipo: ${typeof version }`);
       const versionArr = version.split('.');
-      const requiredVersion = `${versionArr[0]}.${versionArr[1]}.${Number(versionArr[0])+1}`
+      const requiredVersion = `${versionArr[0]}.${versionArr[1]}.${Number(versionArr[2])+1}`
+      core.info(`Version requerida: ${requiredVersion}`);
       if(requiredVersion === localVersion) core.setFailed(`Current version '${ localVersion }' should be the version '${ requiredVersion }'`);
     })
     .catch(core.setFailed);
