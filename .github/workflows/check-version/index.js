@@ -8,9 +8,7 @@ try {
   console.log(token);
   const headers = {};
   const baseSha = github.context.payload.pull_request.base.sha;
-  const headSha = github.context.payload.pull_request.head.sha;
 
-  core.info(`Comparing ${ headSha } to ${ baseSha }`);
   const baseUrl = `https://raw.githubusercontent.com/${ github.context.repo.owner }/${ github.context.repo.repo }/${ baseSha }/package.json`
 
   fetch(baseUrl, { headers })
