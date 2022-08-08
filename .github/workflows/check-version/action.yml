@@ -1,0 +1,12 @@
+name: 'Check version'
+description: 'Check that version on package.json was changed'
+inputs:
+  token:
+    description: 'Github Token'
+    required: true
+outputs:
+  active-feature-flags:
+    description: 'Check Version output'
+runs:
+  using: 'node12'
+  main: 'index.js'
