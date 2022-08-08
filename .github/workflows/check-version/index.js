@@ -18,8 +18,8 @@ try {
     .then(res => res.version)
     .then(version => {
       const localVersion = require(`${ process.env.GITHUB_WORKSPACE }/package.json`).version;
-      core.info('Version que estoy enviando:', localVersion);
-      core.info('Version en el server:', version);
+      core.info(`Version que estoy enviando: ${localVersion} tipo: ${typeof localVersion }`);
+      core.info(`Version en el server: ${version} tipo: ${typeof version }`);
       if (!semver.valid(localVersion)) core.setFailed(`Current version '${ localVersion }' detected as invalid one`);
       if (!semver.gt(localVersion, version)) core.setFailed(`Version '${ localVersion }' wasn't detected as greater than '${ version }'`);
     })
