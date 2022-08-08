@@ -13,5 +13,5 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
       - name: Update version commit
-      if: ${{ failure() }}
-      run: echo "Fallo este pack"
+        if: ${{ failure() }}
+          run: echo "Fallo este pack"
