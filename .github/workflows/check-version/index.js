@@ -16,8 +16,10 @@ try {
     .then(version => {
       const localVersion = require(`${ process.env.GITHUB_WORKSPACE }/package.json`).version;
       const versionArr = version.split('.');
-      const requiredVersion = `${versionArr[0]}.${versionArr[1]}.${Number(versionArr[2])+1}`
-      if(requiredVersion !== localVersion) core.setFailed(`Current version '${ localVersion }' should be the version '${ requiredVersion }'`);
+      const requiredVersion = `${versionArr[0]}.${versionArr[1]}.${Number(versionArr[2])+1}`;
+      if (requiredVersion === localVersion) {
+        core.info(`Version is set correctly}`);
+      } else  { core.setFailed(`Current version '${ localVersion }' should be the version '${ requiredVersion }'`); }
     })
     .catch(core.setFailed);
 } catch (error) {
