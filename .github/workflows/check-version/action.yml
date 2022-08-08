@@ -8,5 +8,5 @@ outputs:
   active-feature-flags:
     description: 'Check Version output'
 runs:
-  using: 'node14'
+  using: 'node12'
   main: 'index.js'
