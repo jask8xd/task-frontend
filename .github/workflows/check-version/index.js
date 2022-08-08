@@ -20,8 +20,9 @@ try {
       const localVersion = require(`${ process.env.GITHUB_WORKSPACE }/package.json`).version;
       core.info(`Version que estoy enviando: ${localVersion} tipo: ${typeof localVersion }`);
       core.info(`Version en el server: ${version} tipo: ${typeof version }`);
-      if (!semver.valid(localVersion)) core.setFailed(`Current version '${ localVersion }' detected as invalid one`);
-      if (!semver.gt(localVersion, version)) core.setFailed(`Version '${ localVersion }' wasn't detected as greater than '${ version }'`);
+      const versionArr = version.split('.');
+      const requiredVersion = `${versionArr[0]}.${versionArr[1]}.${Number(versionArr[0])+1}`
+      if(requiredVersion === localVersion) core.setFailed(`Current version '${ localVersion }' should be the version '${ requiredVersion }'`);
     })
     .catch(core.setFailed);
 } catch (error) {
